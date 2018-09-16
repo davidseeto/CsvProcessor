@@ -1,0 +1,3 @@
+MeterPoint Code,Serial Number,Plant Code,Date/Time,Data Type,Energy,Maximum Demand,Time of Max Demand,Units,Status,Period,DLS Active,Billing Reset Count,Billing Reset Date/Time,Rate
+212621145,212621145,ED011300245,11/09/2015 00:41:02,Export Wh Total,409646.700000,1275.368000,30/12/1899 00:00:00,kwh,.....R....,Total,False,26,01/09/2015 00:00:00,Unified
+212621145,212621145,ED011300245,11/09/2015 00:41:02,Export Wh Total,409646.700000,1275.368000,30/12/1899 00:00:00,kwh,.....R....,Total,False,26,01/09/2015 00:00:00,Rate 1
