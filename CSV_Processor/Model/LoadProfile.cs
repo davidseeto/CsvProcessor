@@ -15,6 +15,5 @@ namespace DataModels
         public Double DataValue { get; set; }
         public String Units { get; set; }
         public String Status { get; set; }
-    }
-  
+    } 
 }
