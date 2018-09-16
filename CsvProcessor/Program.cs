@@ -25,7 +25,7 @@ namespace CsvProcessor
                 CreateLogFileIfNonExistent();  // create the file if it doesn't yet exist
                 Console.WriteLine("CSV Processor!");
                 ConsoleLog("Started: " + DateTime.Now);
-                Directory.SetCurrentDirectory("../../");
+                Directory.SetCurrentDirectory("../../SampleFiles");
 
                 bool foundLoadProfileFiles = false;
                 bool foundTimeOfUseFiles = false;
@@ -226,7 +226,7 @@ namespace CsvProcessor
         {
             var myFiles = new List<string>();
             try {
-                myFiles = Directory.GetFiles("SampleFiles/", filetype + "*.csv", SearchOption.AllDirectories).ToList();
+                myFiles = Directory.GetFiles("./", filetype + "*.csv", SearchOption.AllDirectories).ToList();
                 return myFiles;
             }
             catch {

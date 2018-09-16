@@ -53,7 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Properties\log4net.config" />
+    <None Include="Properties\log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="readme.md" />
     <None Include="SampleFiles\LP_210095893_20150901T011608049.csv" />
     <None Include="SampleFiles\LP_214612534_20150907T084333712.csv" />
