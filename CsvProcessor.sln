@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvProcessor", "CSV_Processor\CsvProcessor.csproj", "{09C8A262-FB38-4213-98BE-00E5653B08B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvProcessor", "CsvProcessor\CsvProcessor.csproj", "{09C8A262-FB38-4213-98BE-00E5653B08B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

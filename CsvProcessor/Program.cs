@@ -342,7 +342,7 @@ namespace CsvProcessor
         // Log.txt
         private static void CreateLogFileIfNonExistent()
         {
-            string path = "Log.txt";
+            string path = "../../SampleFiles/Log.txt";
             if (!File.Exists(path))
                 File.Create(path);
         }

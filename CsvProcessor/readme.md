@@ -1,5 +1,5 @@
 # CsvProcessor
-#David Seeto 2018
+### David Seeto 2018
 
 ## Libraries
 Log4Net 2.0.8 Logging library http://logging.apache.org/log4net/
@@ -54,7 +54,6 @@ The ultimate solution would be to have multiple threads read & process different
 
 To process multiple files, I'd look at parrallelism of file processing.
 
-## Usage:
 
 
 
