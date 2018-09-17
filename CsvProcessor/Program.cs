@@ -16,9 +16,9 @@ namespace CsvProcessor
 
         public static void Main()
         {
-            double percentage = 0.2;       // percentage above or below median
+            double percentage = 0.2;          // percentage above or below median
             String LPField    = "DataValue";  // Load Profile field 
-            String TOUField   = "Energy";    // Time Of Use field
+            String TOUField   = "Energy";     // Time Of Use field
 
             try
             {
@@ -225,7 +225,7 @@ namespace CsvProcessor
         private static List<string> GetFiles(String filetype)
         {
             var myFiles = new List<string>();
-            try {
+            try {               
                 myFiles = Directory.GetFiles("./", filetype + "*.csv", SearchOption.AllDirectories).ToList();
                 return myFiles;
             }
