@@ -2,8 +2,8 @@
 ### David Seeto 2018
 
 ## Libraries
-Log4Net 2.0.8 Logging library http://logging.apache.org/log4net/
-Nunit 3.10.1 Unit Test framework http://nunit.org/
+* Log4Net 2.0.8 Logging library http://logging.apache.org/log4net/
+* Nunit 3.10.1 Unit Test framework http://nunit.org/
 
 Written on macOS using .net Core 2.1.1
 
