@@ -20,20 +20,18 @@ Written on macOS using .net Core 2.1.1
 
 
 ## Overview
-The program will load a directory 'SampleFiles 'and import file based on file prefix "LP" for load profile or  "TOU" for Time of Use files.
-It loads the CSV by Streaming (using StreamReader) the file into a data model of each row.
-Each row is thne added to a dataTable for futher manipulation.
+The program will load a directory 'SampleFiles 'and import files based on file prefix "LP" for "load profile"
+or  "TOU" for "Time of Use" files.
+It loads the CSV file by streaming (using StreamReader) the file into a data model of each row.
+Each row is then added to a dataTable for futher manipulation.
 
-Once the file is completed and the dataTable is ready, the program iterates over the data table to get the median and to compare
+Once the file is completed and the dataTable is ready, the program iterates over the data table to get the median and to compares
 the comparision field against the median value.
 
-Median calclaution is in Maths class as 'Median'.
-Function to determine if comparision field is beyond 20% percent is also in Maths class 'PercentageAboveOrBelow' 
+Median calculation is in Maths class as 'Median'.
+The function to determine if comparision field is beyond 20% percent is also in Maths class 'PercentageAboveOrBelow'
 
 For large files, I streamed the file contents instead of trying to read the whole file.
-Potentially for files with millions of rows, the program could save the results to a database and then work off the data when and as needed.
-
-Utilise SqlBulk insert to insert the data into a properly indexed table and smartly query the table for the actual rows are wanted/needed for a much more efficient plan.
 
 
 ## Program showcase:
@@ -43,11 +41,10 @@ having to reopen the file. I want to touch the file as least times as possible.
 I choose this method - as it would be easy to extend this program to calculate/process other fields if needed. 
 It could be easily extended to be saved to a database/warehousing database. Queries/analytics could then be run off this as needed.
 
-I choose readiability and understandability over any complexity/speed or obsure code to showcase that maintianable code should always be forefront.
+I choose readiability and understandability over any complexity/speed or obsure code to showcase that maintianable code should always be at the forefront.
 I choose to log as much as possible, both to the console and to the log file throughout the appliction. This was implented log4net library.
 
 The use of StreamReader for sequential reading as opposed to memoryMappedFiles which are better suited to random access of the file.
-I choose StreamReader as the file will need to be sequentially processed and I don't want the whole file to be opened in memory at once or to go through the file more than once.
 
 ### Results:
 **LoadProfile Median**
@@ -67,10 +64,14 @@ Line 35:  filesToProcess = GetFiles("XX");
 and introducing a new file processor into function ProcessGivenFileType()  
 
 ## Improvements:
-The application could move completed files out of the folder when completed into another folder or delete them as they are completed.
-The application could Poll the directory for new files added to it. The files in the directory could be added by either 'ftping'' or 'copied' into.
+The application could move completed files out of the folder when completed into another folder or delete them.
+The application could Poll the directory for new files added to it. If it sees new files, then it could automatically process them.  The files in the directory could be added by either 'ftping'' or 'copied' into.
 
-There are however ways to make it more effective, it would be better with a multithreaded asynchronous solution where 
+Potentially for files with millions of rows, the program could save the results to a database and then work off the dataset when and as needed.
+
+Utilise SqlBulk insert to insert the data into a properly indexed table and smartly query the table for the actual rows are wanted/needed for a much more efficient plan.
+
+There are many ways to make it more effective, it would be better with a multithreaded asynchronous solution where
 one thread reads file data into the datatable and another processees it as it becomes available to consume. 
 (Producer Consumer)
 
@@ -84,7 +85,7 @@ The program could 'Task' - off each file in the directory and then wait for them
 (Parallelism)
 
 Asynchronous program is best suited for I/O bound work. It'll increase the overall throughput.
-Parallel program is best suited for CPU intensive work, or there is a lot of work and want to split it up on multiple threads.
+Parallel program is best suited for CPU intensive work, or if there is a lot of work and want to split it up on multiple threads.
 
 
 
