@@ -8,18 +8,18 @@ Nunit 3.10.1 Unit Test framework http://nunit.org/
 Written on macOS using .net Core 2.1.1
 
 ## Folder structure
-**Program.cs** - main program code
-**Helpers** - Common Maths functions
-**Model** - data models
-**Tests** - unit tests for maths functions
-**Properties/log4net.config** - log4net config file for file appender
-**SampleFiles/log.txt** - logfile
-**SampleFiles/** - location of csv file
-**Readme.md** - this file
+* **Program.cs** - main program code
+* **Helpers** - Common Maths functions
+* **Model** - data models
+* **Tests** - unit tests for maths functions
+* **Properties/log4net.config** - log4net config file for file appender
+* **SampleFiles/log.txt** - logfile
+* **SampleFiles/** - location of csv file
+* **Readme.md** - this file
 
 
 
-##Overview
+## Overview
 The program will load a directory 'SampleFiles 'and import file based on file prefix "LP" for load profile or  "TOU" for Time of Use files.
 It loads the CSV by Streaming (using StreamReader) the file into a data model of each row.
 Each row is thne added to a dataTable for futher manipulation.
@@ -49,24 +49,24 @@ I choose to log as much as possible, both to the console and to the log file thr
 The use of StreamReader for sequential reading as opposed to memoryMappedFiles which are better suited to random access of the file.
 I choose StreamReader as the file will need to be sequentially processed and I don't want the whole file to be opened in memory at once or to go through the file more than once.
 
-###Results:
-LoadProfile Median
-...8049- 1.25
-...3712 - 0
-...7915 - 1.89
+### Results:
+**LoadProfile Median**
+* ...8049 - 1.25
+* ...3712 - 0
+* ...7915 - 1.89
 
 
-Time Of Use Median
-...2358 - 409646.7
-...2240 - 378331.6
-...0057 - 0.146
+**Time Of Use Median**
+* ...2358 - 409646.7
+* ...2240 - 378331.6
+* ...0057 - 0.146
 
 ### Extending
 The applicatin can be easily extended by registered a new file prefix
 Line 35:  filesToProcess = GetFiles("XX");
 and introducing a new file processor into function ProcessGivenFileType()  
 
-##Improvements:
+## Improvements:
 The application could move completed files out of the folder when completed into another folder or delete them as they are completed.
 The application could Poll the directory for new files added to it. The files in the directory could be added by either 'ftping'' or 'copied' into.
 
