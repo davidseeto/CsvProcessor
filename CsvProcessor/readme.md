@@ -83,6 +83,9 @@ To process multiple files, I'd look at parrallelism of file processing.
 The program could 'Task' - off each file in the directory and then wait for them to complete, introducing a level of parallelism.
 (Parallelism)
 
+Asynchronous program is best suited for I/O bound work. It'll increase the overall throughput.
+Parallel program is best suited for CPU intensive work, or there is a lot of work and want to split it up on multiple threads.
+
 
 
 
